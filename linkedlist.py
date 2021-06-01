@@ -19,6 +19,16 @@ class LinkedList:
         newnode.nextnode = self.headval
         self.headval = newnode
 
+    def insertatend(self, data):
+        newnode = Node(data)
+        if self.headval is None:
+            self.headval = newnode
+            return
+        last  = self.headval
+        while(last.nextnode):
+            last = last.nextnode
+        last.nextnode = newnode
+
 
 linkedlist = LinkedList()
 linkedlist.headval = Node("Mon")
@@ -30,5 +40,6 @@ node2.nextnode = node3
 
 
 linkedlist.insertbeginning("Sun")
+linkedlist.insertatend("Thurs")
 
 linkedlist.printlist()
